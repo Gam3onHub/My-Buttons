@@ -1,0 +1,293 @@
+/* PAGE SETUP */
+/* SET THE BACKGROUND COLOR OF THE ENTIRE PAGE */
+body {
+  background: #ffffff;
+  /* USE FLEXBOX TO CENTER CONTENT HORIZONTALLY */
+  display: flex;
+  /* USE FLEXBOX TO CENTER CONTENT VERTICALLY */
+  justify-content: center;
+  align-items: center;
+  /* SET HEIGHT TO FULL VIEWPORT HEIGHT */
+  height: 100vh;
+  /* SET DEFAULT FONT FAMILY FOR THE PAGE */
+  font-family: Arial, sans-serif;
+}
+
+/* Start your project button*/
+
+/* NORMAL STATE BUTTON */
+
+/* OUTER STROKE + GAP */
+/* THIS IS THE BUTTON WRAPPER, CONTAINING BORDER/STROKE */
+.btn-wrapper {
+  /* PADDING BETWEEN BORDER AND INNER FILL */
+  padding: 6px;
+  /* OUTER BORDER COLOR AND THICKNESS */
+  border: 2px solid #ff3c00;
+  /* MAKE BACKGROUND TRANSPARENT */
+  background: transparent;
+  /* BORDER CORNER ROUNDING */
+  border-radius: 8px;
+  /* CHANGE CURSOR TO POINTER ON HOVER */
+  cursor: pointer;
+}
+
+/* ++++++++ INNER FILL (NORMAL STATE) ++++++++ */
+
+/* THIS IS THE BUTTON’S INNER BOX OR FILL */
+.btn-fill {
+  /* needed for pseudo-element */
+  position: relative; 
+  /* INLINE BLOCK ALLOWS PADDING AND TRANSFORM */
+  display: inline-block;
+  /* PADDING DEFINES BUTTON SIZE */
+  padding: 18px 48px;
+  /* FONT SIZE FOR BUTTON TEXT */
+  font-size: 22px;
+  /* MAKE FONT BOLD */
+  font-weight: bold;
+  /* ITALICIZE FONT */
+  font-style: italic;
+  /* TEXT COLOR */
+  color: #EBC8C2;
+  /* BACKGROUND COLOR OF BUTTON */
+  background: #e62900;
+  /* INNER FILL BORDER RADIUS MATCHES OUTER */
+  border-radius: 8px;
+  /* CENTER TEXT HORIZONTALLY */
+  text-align: center;
+  /* SMOOTH TRANSITIONS FOR BACKGROUND, TRANSFORM, AND BOX SHADOW */
+  transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  /* SET TRANSFORM ORIGIN TO CENTER FOR SCALING */
+  transform-origin: center;
+  overflow: hidden; /* ensures pseudo-element stays inside */
+}
+
+/* HOVER STATE */
+/* WHEN THE BUTTON WRAPPER IS HOVERED, CHANGE THE INNER FILL */
+.btn-wrapper:hover .btn-fill {
+  /* BASE GREEN COLOR */
+  background-color: #36B330;
+  
+  /* OVERLAY RECTANGULAR FADE AT EDGES */
+  background-image: 
+    linear-gradient(to top, rgba(54,179,48,0) 0%, rgba(54,179,48,1) 10%, rgba(54,179,48,1) 90%, rgba(54,179,48,0) 100%),
+    linear-gradient(to left, rgba(54,179,48,0) 0%, rgba(54,179,48,1) 10%, rgba(54,179,48,1) 90%, rgba(54,179,48,0) 100%);
+  background-blend-mode: lighten; /* lets the gradients blend with base color */
+}
+
+/* STROKE ON HOVER */
+/* CHANGE OUTER BORDER COLOR AND RADIUS ON HOVER */
+.btn-wrapper:hover {
+  /* OUTER BORDER COLOR */
+  border-color: #36B330;
+  /* OUTER BORDER RADIUS */
+  border-radius: 8px;
+}
+
+/* SCALE ONLY THE TEXT */
+/* THIS TARGETS THE INNER TEXT SPAN */
+.btn-text {
+  /* INLINE BLOCK ALLOWS TRANSFORM TO WORK ON TEXT */
+  display: inline-block;
+  /* SMOOTH TRANSITION FOR TEXT SCALING */
+  transition: transform 0.2s ease;
+  /* SCALE FROM CENTER OF TEXT */
+  transform-origin: center;
+}
+
+/* HOVER: ONLY THE TEXT GROWS */
+/* WHEN BUTTON WRAPPER IS HOVERED, SCALE THE TEXT */
+.btn-wrapper:hover .btn-text {
+  /* SCALE TEXT UP 20% */
+  transform: scale(1.2);
+}
+
+/* INNER FADE ON HOVER */
+.btn-wrapper:hover .btn-fill::before {
+  content: "";
+  position: absolute;
+  inset: 0; 
+  border-radius: 8px;
+  background: radial-gradient(circle, rgba(54,179,48,0.2) 80%, rgba(54,179,48,0) 100%);
+  pointer-events: none;
+}
+
+/* ADDS classic “shiny highlight” that moves across the button */
+.btn-fill::after {
+  content: "";
+  position: absolute;
+  top: 0; left: -75%;
+  width: 50%;
+  height: 100%;
+  background: rgba(255,255,255,0.2);
+  transform: skewX(-20deg);
+  transition: 0.5s;
+}
+
+.btn-wrapper:hover .btn-fill::after {
+  left: 125%;
+}
+
+.btn-wrapper:hover .btn-fill {
+  transform: scale(1.08) rotateZ(-2.5deg);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+}
+
+
+/* ADDS SPACE BETWEEN BUTTONS */
+.btn-wrapper,
+.btn2-wrapper {
+  margin-right: 20px; /* adds space to the right */
+}
+
+
+
+
+
+
+
+/* ----------------- Get in Touch button -------------------- */
+
+/* NORMAL STATE BUTTON */
+
+/* OUTER STROKE + GAP */
+/* THIS IS THE BUTTON WRAPPER, CONTAINING BORDER/STROKE */
+.btn2-wrapper {
+  /* PADDING BETWEEN BORDER AND INNER FILL */
+  padding: 6px;
+  /* OUTER BORDER COLOR AND THICKNESS */
+  border: 2px solid #3455E7;
+  /* MAKE BACKGROUND TRANSPARENT */
+  background: transparent;
+  /* BORDER CORNER ROUNDING */
+  border-radius: 8px;
+  /* CHANGE CURSOR TO POINTER ON HOVER */
+  cursor: pointer;
+}
+
+/* ++++++++ INNER FILL (NORMAL STATE) ++++++++ */
+
+/* THIS IS THE BUTTON’S INNER BOX OR FILL */
+.btn2-fill {
+  /* needed for pseudo-element */
+  position: relative; 
+  /* INLINE BLOCK ALLOWS PADDING AND TRANSFORM */
+  display: inline-block;
+  /* PADDING DEFINES BUTTON SIZE */
+  padding: 18px 48px;
+  /* FONT SIZE FOR BUTTON TEXT */
+  font-size: 22px;
+  /* MAKE FONT BOLD */
+  font-weight: bold;
+  /* ITALICIZE FONT */
+  font-style: italic;
+  /* TEXT COLOR */
+  color: #EBC8C2;
+  /* BACKGROUND COLOR OF BUTTON */
+  background: #3455E7;
+  /* INNER FILL BORDER RADIUS MATCHES OUTER */
+  border-radius: 8px;
+  /* CENTER TEXT HORIZONTALLY */
+  text-align: center;
+  /* SMOOTH TRANSITIONS FOR BACKGROUND, TRANSFORM, AND BOX SHADOW */
+  transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  /* SET TRANSFORM ORIGIN TO CENTER FOR SCALING */
+  transform-origin: center;
+  overflow: hidden; /* ensures pseudo-element stays inside */
+}
+
+/* HOVER STATE */
+/* WHEN THE BUTTON WRAPPER IS HOVERED, CHANGE THE INNER FILL */
+.btn2-wrapper:hover .btn2-fill {
+  /* BASE GREEN COLOR */
+  background-color: #48A9A6;
+  
+  /* OVERLAY RECTANGULAR FADE AT EDGES */
+  background-image: 
+    linear-gradient(to top, rgba(54,179,48,0) 0%, rgba(54,179,48,1) 10%, rgba(54,179,48,1) 90%, rgba(54,179,48,0) 100%),
+    linear-gradient(to left, rgba(54,179,48,0) 0%, rgba(54,179,48,1) 10%, rgba(54,179,48,1) 90%, rgba(54,179,48,0) 100%);
+  background-blend-mode: lighten; /* lets the gradients blend with base color */
+}
+
+/* STROKE ON HOVER */
+/* CHANGE OUTER BORDER COLOR AND RADIUS ON HOVER */
+.btn2-wrapper:hover {
+  /* OUTER BORDER COLOR */
+  border-color: #48A9A6;
+  /* OUTER BORDER RADIUS */
+  border-radius: 8px;
+}
+
+/* SCALE ONLY THE TEXT */
+/* THIS TARGETS THE INNER TEXT SPAN */
+.btn2-text {
+  /* INLINE BLOCK ALLOWS TRANSFORM TO WORK ON TEXT */
+  display: inline-block;
+  /* SMOOTH TRANSITION FOR TEXT SCALING */
+  transition: transform 0.2s ease;
+  /* SCALE FROM CENTER OF TEXT */
+  transform-origin: center;
+}
+
+/* HOVER: ONLY THE TEXT GROWS */
+/* WHEN BUTTON WRAPPER IS HOVERED, SCALE THE TEXT */
+.btn2-wrapper:hover .btn2-text {
+  /* SCALE TEXT UP 20% */
+  transform: scale(1.2);
+}
+
+/* INNER FADE ON HOVER */
+.btn2-wrapper:hover .btn2-fill::before {
+  content: "";
+  position: absolute;
+  inset: 0; 
+  border-radius: 8px;
+  background: radial-gradient(circle, rgba(54,179,48,0.2) 80%, rgba(54,179,48,0) 100%);
+  pointer-events: none;
+}
+
+/* ADDS classic “shiny highlight” that moves across the button */
+.btn2-fill::after {
+  content: "";
+  position: absolute;
+  top: 0; left: -75%;
+  width: 50%;
+  height: 100%;
+  background: rgba(255,255,255,0.2);
+  transform: skewX(-20deg);
+  transition: 0.5s;
+}
+
+.btn2-wrapper:hover .btn2-fill::after {
+  left: 125%;
+}
+
+.btn2-wrapper:hover .btn2-fill {
+  transform: scale(1.08) rotateZ(2.5deg);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+}
+
+
+/* ----------------- Simple Home icon -------------------- */
+.home-btn {
+  display: inline-flex;       /* inline next to buttons */
+  align-items: center;        /* vertical center */
+  justify-content: center;    /* horizontal center */
+  text-decoration: none;      /* remove underline */
+  color: black;               /* icon color */
+  margin-left: 10px;          /* space from previous button */
+  cursor: pointer;            /* pointer on hover */
+}
+
+.home-btn svg {
+  display: block;             /* prevent inline spacing */
+  width: 28px;
+  height: 28px;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.home-btn:hover svg {
+  color: #555;                /* dark gray on hover */
+  transform: scale(1.1);      /* subtle grow on hover */
+}

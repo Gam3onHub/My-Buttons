@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Search Button – Fixed 4 States</title>
+  <link rel="stylesheet" href="style2.css" />
+</head>
+<body>
+
+  <div class="search-wrapper">
+    <!-- Checkbox must be INSIDE the wrapper so we can use :has() or child selectors reliably -->
+    <input type="checkbox" id="searchToggle" hidden />
+
+    <label for="searchToggle" class="magnifier-btn">
+      <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+        <circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2.5"/>
+        <line x1="21" y1="21" x2="16.5" y2="16.5" stroke="currentColor" stroke-width="2.5"/>
+      </svg>
+    </label>
+
+    <input type="text" class="search-input" id="searchInput" placeholder="Search…" autocomplete="off" spellcheck="false"/>
+
+  </div>
+
+        <!-- Home button -->
+<a href="../index.html" class="home-btn">
+  <!-- Home SVG icon -->
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="28" height="28">
+    <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+  </svg>
+</a>
+
+
+  <script>
+    // Wait for DOM
+    document.addEventListener('DOMContentLoaded', () => {
+      const toggle   = document.getElementById('searchToggle');
+      const input    = document.getElementById('searchInput');
+      const wrapper  = document.querySelector('.search-wrapper');
+
+      if (!toggle || !input || !wrapper) {
+        console.error("Required elements missing");
+        return;
+      }
+
+      // Auto-focus when opened
+      toggle.addEventListener('change', () => {
+        if (toggle.checked) {
+          setTimeout(() => {
+            input.focus();
+            console.log("Expanded → input focused");
+          }, 450);
+        } else {
+          input.value = '';
+          input.blur();
+          console.log("Collapsed");
+        }
+      });
+
+      // ESC to close
+      document.addEventListener('keydown', e => {
+        if (e.key === 'Escape' && toggle.checked) {
+          toggle.checked = false;
+          console.log("ESC → closed");
+        }
+      });
+
+      // Click outside to close
+      document.addEventListener('click', e => {
+        if (toggle.checked && !wrapper.contains(e.target)) {
+          toggle.checked = false;
+          console.log("Clicked outside → closed");
+        }
+      });
+
+      // Debug: log clicks on the label/button area
+      wrapper.addEventListener('click', e => {
+        console.log("Click inside wrapper", e.target);
+      });
+    });
+  </script>
+
+</body>
+</html>
