@@ -1,5 +1,5 @@
 body {
-  background: #0f172a;
+  background: #ffffff;
   min-height: 100dvh;
   display: grid;
   place-items: center;
@@ -82,4 +82,5 @@ body {
 
 .search-input:focus {
   caret-color: #60a5fa;
+
 }
