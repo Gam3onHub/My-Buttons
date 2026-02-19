@@ -267,3 +267,25 @@ body {
   transform: scale(1.08) rotateZ(2.5deg);
   box-shadow: 0 8px 20px rgba(0,0,0,0.4);
 }
+
+
+/* INDEX LINK STYLING */
+a.index-link {
+  display: inline-block;           /* Makes it easier to add padding */
+  margin-top: 20px;                /* Space from other content */
+  padding: 10px 20px;              /* Comfortable click area */
+  background-color: #1c1c1c;       /* Dark background (change as you like) */
+  color: #00ff00;                  /* Bright green text */
+  text-decoration: none;           /* Remove underline */
+  font-weight: bold;               /* Make it pop */
+  border: 2px solid #00ff00;       /* Outline effect */
+  border-radius: 8px;              /* Rounded corners */
+  transition: all 0.3s ease;       /* Smooth hover */
+}
+
+a.index-link:hover {
+  background-color: #00ff00;       /* Invert colors on hover */
+  color: #1c1c1c;
+  transform: scale(1.05);          /* Slight pop effect */
+}
+
