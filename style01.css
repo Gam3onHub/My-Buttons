@@ -1,7 +1,7 @@
 /* PAGE SETUP */
 /* SET THE BACKGROUND COLOR OF THE ENTIRE PAGE */
 body {
-  background: #1c1c1c;
+  background: #ffffff;
   /* USE FLEXBOX TO CENTER CONTENT HORIZONTALLY */
   display: flex;
   /* USE FLEXBOX TO CENTER CONTENT VERTICALLY */
@@ -288,4 +288,5 @@ a.index-link:hover {
   color: #1c1c1c;
   transform: scale(1.05);          /* Slight pop effect */
 }
+
 
