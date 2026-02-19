@@ -105,3 +105,11 @@ a.index-link:hover {
   transform: scale(1.05);          /* Slight pop effect */
 }
 
+/* CONTAINER TO STACK BUTTON + INDEX */
+.search-container {
+  display: flex;
+  flex-direction: column;  /* stack vertically */
+  align-items: center;     /* center horizontally */
+  gap: 20px;               /* space between button and link */
+}
+
