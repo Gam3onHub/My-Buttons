@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Button 01 - Interaction Practice</title>
+  <link rel="stylesheet" href="style01.css">
+</head>
+<body>
+
+<button class="btn-wrapper">
+  <span class="btn-fill">
+    <span class="btn-text">Start your project!</span>
+  </span>
+</button>
+
+
+
+<button class="btn2-wrapper">
+  <span class="btn2-fill">
+    <span class="btn2-text">Get in touch!</span>
+  </span>
+</button>
+
+
+<!-- Give the button s nice tilt -->
+<script>
+const btnText = document.querySelector('.btn-text');
+btnText.addEventListener('mouseenter', () => btnText.style.color = '#ffffff');
+btnText.addEventListener('mouseleave', () => btnText.style.color = '#EBC8C2');
+</script>
+
+
+</body>
+</html>
